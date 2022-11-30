@@ -29,7 +29,7 @@ export default function Cast() {
                     {if(profile_path){
                         return(
                             <Item key={name}>
-                                <img src={`https://image.tmdb.org/t/p/w500/${profile_path}`} alt={`Photo: ${name}`}/>
+                                <img src={`https://image.tmdb.org/t/p/w500/${profile_path}`} alt={name} />
                                 <p>{name}</p>
                                 <p>Character: {character}</p>
                             </Item>

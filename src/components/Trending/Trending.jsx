@@ -12,7 +12,8 @@ export default function Trending () {
             try{
                 const resultingMovies = await fetchTrending();
                 const necessaryData = resultingMovies.map(({id, title}) => ({id, title}));
-                setListTrendingMovies(prevState => [...prevState, ...necessaryData]);
+                const filterNecessaryData = necessaryData.filter(data => data.title !== undefined);
+                setListTrendingMovies(prevState => [...prevState, ...filterNecessaryData]);
             } catch (error){
                 console.log(error)
             }
@@ -25,9 +26,7 @@ export default function Trending () {
         <Box as="div" p={3}>
             {{listTrendingMovies} && <ul>
             {listTrendingMovies.map(({id, title}) => {
-                if (title) {
-                    return <Item key={id} ><ItemLink to={`movies/${id}`}>{title}</ItemLink></Item>
-                }
+                return <Item key={id} ><ItemLink to={`movies/${id}`}>{title}</ItemLink></Item>
             })}</ul>}
         </Box>
     )

@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Item, Wrapper } from "./AdditionalInformation.styled";
 
 const navItem = [
@@ -12,7 +12,6 @@ export const AdditionalInformation = () => {
             <Wrapper>
                 {navItem && <ul>{navItem.map(({href, text}) => <Item key={href}><Link to={href} >{text}</Link></Item>)}</ul>}
             </Wrapper>
-            <Outlet />
         </>
     )
 }

@@ -8,10 +8,10 @@ import { ThemeProvider } from 'styled-components';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/goit-react-hw-05-movies/">
       <ThemeProvider theme={theme}>
-        <App />
+          <App />
       </ThemeProvider>
     </BrowserRouter>
-  </React.StrictMode>
-);
+    </React.StrictMode>
+    );

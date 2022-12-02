@@ -9,7 +9,11 @@ export const AppBar = () => {
     return (
         <Header>
             <Navigation>
-                {navItem.map(({href, text}) => <LinkItem to={href} key={href}>{text}</LinkItem>)}
+                {navItem.map(({href, text}) => (
+                    <LinkItem to={href} key={href}>
+                        {text}
+                    </LinkItem>
+                ))}
             </Navigation>
         </Header>
     )

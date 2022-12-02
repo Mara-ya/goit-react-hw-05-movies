@@ -28,23 +28,23 @@ export default function Movies() {
             }
         }
 
-        if(searchQuery){
-            getSearchMovie();
-        }
+        getSearchMovie();
     }, [searchQuery]);
 
     return(
         <Box as="div" p={3}>
             <SearchBar onSubmit={handleSubmit}/>
             {searchMovies.length !== 0 
-            ? <ul> {searchMovies.map(({id, title}) => {
-                return(
-                    <Item key={id}>
-                        <NavLink to={`${id}`} state={{ from: location }}>
-                            {title}
-                        </NavLink>
-                    </Item>
-                )})}
+            ? <ul> 
+                {searchMovies.map(({id, title}) => {
+                    return(
+                        <Item key={id}>
+                            <NavLink to={`${id}`} state={{ from: location }}>
+                                {title}
+                            </NavLink>
+                        </Item>
+                    )
+                })}
             </ul>
             : <Text>Enter the name</Text>}
         </Box>

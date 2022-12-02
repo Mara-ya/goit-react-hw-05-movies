@@ -39,12 +39,18 @@ export default function MovieDetails () {
                     <h3>Overview</h3>
                     <p>{movieInfo.overview}</p>
                     <h3>Genres</h3>
-                    {movieInfo.hasOwnProperty("genres") && 
-                    <ul>{
-                        movieInfo.genres.map(({id, name}) => {
-                            return <li key={id} ><p>{name}</p></li>
-                        })}</ul>}
-                    </div>
+                    {movieInfo.hasOwnProperty("genres") && (
+                        <ul>
+                            {movieInfo.genres.map(({id, name}) => {
+                                return (
+                                    <li key={id} >
+                                        <p>{name}</p>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    )}
+                </div>
             </WrapperMovie>
             {error && <Navigate to="/" replace />}
         </Box>

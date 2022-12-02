@@ -24,14 +24,15 @@ export default function Reviews() {
         <Box as="div" p={3}>
             {reviews.length === 0 
                 ? <p>We don't have any reviews for this movie.</p>
-                : <ul> {reviews.map(({author, content}) => {
-                    return(
-                        <li key={author}>
-                            <p>{author}</p>
-                            <p>{content}</p>
-                        </li>
-                    )
-                })}
+                : <ul> 
+                    {reviews.map(({author, content}) => {
+                        return(
+                            <li key={author}>
+                                <p>{author}</p>
+                                <p>{content}</p>
+                            </li>
+                        )
+                    })}
                 </ul>
             }
         </Box>

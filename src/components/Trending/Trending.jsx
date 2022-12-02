@@ -24,10 +24,13 @@ export default function Trending () {
 
     return(
         <Box as="div" p={3}>
-            {{listTrendingMovies} && <ul>
-            {listTrendingMovies.map(({id, title}) => {
-                return <Item key={id} ><ItemLink to={`movies/${id}`}>{title}</ItemLink></Item>
-            })}</ul>}
+            {listTrendingMovies && (
+                <ul>
+                {listTrendingMovies.map(({id, title}) => {
+                    return <Item key={id} ><ItemLink to={`movies/${id}`}>{title}</ItemLink></Item>
+                })}
+                </ul>
+            )}
         </Box>
     )
 }

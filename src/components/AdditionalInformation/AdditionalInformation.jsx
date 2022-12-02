@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Item, Wrapper } from "./AdditionalInformation.styled";
 
 const navItem = [
@@ -7,10 +7,22 @@ const navItem = [
 ];
 
 export const AdditionalInformation = () => {
+    const location = useLocation();
+    const backLink = location.state?.from ?? "/movies"
+
     return(
         <>
             <Wrapper>
-                {navItem && <ul>{navItem.map(({href, text}) => <Item key={href}><Link to={href} >{text}</Link></Item>)}</ul>}
+                {navItem && (
+                    <ul>
+                        {navItem.map(({href, text}) => (
+                            <Item key={href}>
+                                <Link to={href} >
+                                    {text}
+                                </Link>
+                            </Item>
+                        ))}
+                    </ul>)}
             </Wrapper>
         </>
     )

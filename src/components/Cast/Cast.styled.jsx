@@ -35,8 +35,6 @@ export const Item = styled.li`
 
     @media screen and (min-width: 768px){
         width: 200px;
-
-        width: calc(100% / 3 - ${p => p.theme.space[4]}px);
         margin-left: ${p => p.theme.space[4]}px;
 
         & img{
@@ -46,7 +44,6 @@ export const Item = styled.li`
 
     @media screen and (min-width: 1200px){
         width: 250px;
-        width: calc(100% / 4 - ${p => p.theme.space[4]}px);
         margin-left: ${p => p.theme.space[4]}px;
 
         & img{

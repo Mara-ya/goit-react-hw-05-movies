@@ -17,7 +17,7 @@ export const AdditionalInformation = () => {
                     <ul>
                         {navItem.map(({href, text}) => (
                             <Item key={href}>
-                                <Link to={href} >
+                                <Link to={href} state={{ from: backLink}}>
                                     {text}
                                 </Link>
                             </Item>
